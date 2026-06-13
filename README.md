@@ -1,83 +1,139 @@
 # Multi-Cloud Incident Response Automation
 
-## Overview
+Automated incident response platform built with Infrastructure as Code (Terraform), cloud-native security services, and event-driven automation.
 
-This project demonstrates automated cloud security incident response using AWS security services and Terraform.
-
-When Amazon GuardDuty detects suspicious activity, an EventBridge rule automatically triggers an AWS Lambda function that isolates the affected EC2 instance by applying a quarantine security group.
-
-The objective is to reduce incident response time and automate containment actions for potential security threats.
+The goal of this project is to demonstrate how security findings can automatically trigger containment actions across cloud environments, reducing response times and improving operational efficiency.
 
 ---
 
-## Architecture
+## Project Objectives
+
+* Automate security incident response workflows
+* Reduce manual containment effort
+* Demonstrate cloud-native security automation
+* Implement Infrastructure as Code (IaC)
+* Build reusable multi-cloud security patterns
+* Integrate threat detection with automated remediation
+
+---
+
+## Current Implementation Status
+
+| Platform                  | Status   |
+| ------------------------- | -------- |
+| AWS                       | Complete |
+| Azure                     | Planned  |
+| Multi-Cloud Orchestration | Planned  |
+
+---
+
+# AWS Incident Response Automation
+
+## Solution Overview
+
+The AWS implementation automatically isolates potentially compromised EC2 instances when Amazon GuardDuty generates a security finding.
+
+The workflow integrates threat detection, event processing, automated remediation, logging, and auditing into a single automated response pipeline.
+
+---
+
+## AWS Architecture
 
 ```text
-Amazon GuardDuty
-        ↓
-Amazon EventBridge
-        ↓
-AWS Lambda
-        ↓
-EC2 Isolation (Quarantine Security Group)
+                    +------------------+
+                    | Amazon GuardDuty |
+                    +---------+--------+
+                              |
+                              v
+                    +------------------+
+                    | Amazon EventBridge|
+                    +---------+--------+
+                              |
+                              v
+                    +------------------+
+                    | AWS Lambda       |
+                    | Isolation Engine |
+                    +---------+--------+
+                              |
+                              v
+                    +------------------+
+                    | EC2 Instance     |
+                    | Quarantine SG    |
+                    +------------------+
+
+Supporting Services
+-------------------
+• AWS IAM
+• AWS CloudTrail
+• Amazon S3
 ```
+
+---
+
+## AWS Security Workflow
+
+1. Amazon GuardDuty detects suspicious activity.
+2. GuardDuty generates a security finding.
+3. Amazon EventBridge receives the event.
+4. AWS Lambda is automatically invoked.
+5. Lambda identifies the affected EC2 instance.
+6. A quarantine security group is applied.
+7. CloudTrail records all response activity.
+8. Logs are retained in Amazon S3.
 
 ---
 
 ## Technologies Used
 
-* Terraform
-* AWS GuardDuty
-* Amazon EventBridge
-* AWS Lambda
+### Security Services
+
+* Amazon GuardDuty
+* AWS CloudTrail
 * AWS IAM
-* Amazon CloudTrail
+
+### Automation Services
+
+* AWS Lambda
+* Amazon EventBridge
+
+### Infrastructure
+
+* Terraform
 * Amazon S3
+* Amazon EC2
 
 ---
 
-## Terraform Resources
+## AWS Components Deployed
 
-### Security Monitoring
+### Detection
 
 * GuardDuty Detector
-* CloudTrail Trail
 
 ### Logging
 
-* S3 Bucket for CloudTrail Logs
-* S3 Bucket Policy
+* CloudTrail Trail
+* S3 Log Storage Bucket
 
-### Automated Response
+### Automation
 
 * Lambda Function
-* Lambda IAM Role
-* Lambda IAM Policy
-
-### Containment
-
-* Quarantine Security Group
+* IAM Role
+* IAM Policies
 
 ### Event Processing
 
 * EventBridge Rule
 * EventBridge Target
-* Lambda Permission
+* Lambda Invocation Permissions
+
+### Containment
+
+* Quarantine Security Group
 
 ---
 
-## Automated Response Workflow
-
-1. GuardDuty generates a security finding.
-2. EventBridge captures the event.
-3. Lambda is automatically invoked.
-4. Lambda extracts the affected EC2 instance ID.
-5. Lambda applies the quarantine security group.
-6. CloudTrail records the response activity.
-
----
-
-## Lambda Isolation Logic
+## Lambda Containment Logic
 
 ```python
 ec2.modify_instance_attribute(
@@ -86,64 +142,9 @@ ec2.modify_instance_attribute(
 )
 ```
 
-This action removes the instance from its existing security groups and places it into an isolated security boundary.
+This action removes existing security groups and applies a quarantine security group to isolate the affected EC2 instance.
 
 ---
-
-## Project Structure
-
-```text
-multi-cloud-incident-response-automation/
-│
-├── aws/
-│   ├── main.tf
-│   └── lambda/
-│       ├── handler.py
-│       └── lambda.zip
-│
-├── azure/
-│
-├── providers.tf
-├── README.md
-└── .gitignore
-```
-
----
-
-## Deployment Validation
-
-The solution was successfully deployed and validated in AWS using Terraform.
-
-Validated Components:
-
-* GuardDuty deployment
-* CloudTrail deployment
-* S3 logging bucket creation
-* Lambda deployment
-* EventBridge integration
-* Automated EC2 isolation workflow
-
----
-
-## Security Concepts Demonstrated
-
-* Incident Response Automation
-* Infrastructure as Code (IaC)
-* Event-Driven Security Operations
-* Automated Containment
-* AWS Security Services Integration
-* Serverless Security Automation
-
----
-
-## Future Enhancements
-
-* Security Hub integration
-* SNS notifications
-* Slack notifications
-* Threat simulation testing
-* Azure incident response implementation
-* Multi-cloud orchestration
 
 ## Project Screenshots
 
@@ -151,9 +152,9 @@ Validated Components:
 
 ![GuardDuty Deployment](screenshots/01-guardduty-deployment.png)
 
-### CloudTrail Configuration
+### CloudTrail Deployment
 
-![CloudTrail Configuration](screenshots/02-aws-cloudtrail-enabled.png)
+![CloudTrail Deployment](screenshots/02-aws-cloudtrail-enabled.png)
 
 ### Lambda Deployment
 
@@ -167,12 +168,124 @@ Validated Components:
 
 ![Resource Cleanup](screenshots/05-resource-cleanup.png)
 
+---
 
+## Skills Demonstrated
 
+### Cloud Security
 
+* Threat Detection
+* Security Monitoring
+* Incident Response
+* Security Operations
 
+### Cloud Engineering
 
+* Terraform
+* Infrastructure as Code
+* AWS Architecture
+* IAM Design
 
+### Automation
+
+* Event-Driven Architecture
+* Serverless Automation
+* Automated Remediation
+* Security Workflow Automation
+
+---
+
+## Project Outcomes
+
+Successfully deployed and validated an automated AWS incident response workflow using Terraform and AWS security services.
+
+This implementation demonstrates:
+
+* Automated threat response
+* Cloud-native security operations
+* Security service integration
+* Infrastructure as Code deployment
+* Automated containment workflows
+
+---
+
+# Azure Incident Response Automation
+
+**Status: Planned**
+
+The Azure implementation will extend the same incident response concepts using Azure-native security services.
+
+### Planned Services
+
+* Microsoft Defender for Cloud
+* Microsoft Sentinel
+* Azure Functions
+* Azure Monitor
+* Log Analytics Workspace
+* Azure Event Grid
+* Azure Storage Account
+
+### Planned Workflow
+
+```text
+Microsoft Defender for Cloud
+            ↓
+      Azure Monitor
+            ↓
+      Event Grid
+            ↓
+     Azure Function
+            ↓
+ Automated Containment
+```
+
+Future updates will include architecture diagrams, deployment screenshots, Terraform code, and validation testing.
+
+---
+
+# Future Enhancements
+
+## AWS
+
+* AWS Security Hub Integration
+* SNS Notifications
+* Slack Integration
+* Advanced Event Filtering
+
+## Azure
+
+* Microsoft Sentinel Playbooks
+* Logic Apps Automation
+* Automated VM Isolation
+* Defender for Cloud Integration
+
+## Multi-Cloud
+
+* Unified Security Dashboard
+* Cross-Cloud Incident Correlation
+* Centralized Alerting
+* Automated Multi-Cloud Remediation
+
+---
+
+## Repository Structure
+
+```text
+multi-cloud-incident-response-automation/
+│
+├── aws/
+│   ├── main.tf
+│   ├── lambda/
+│   └── supporting resources
+│
+├── azure/
+│
+├── screenshots/
+│
+├── providers.tf
+├── README.md
+└── .gitignore
+```
 
 ---
 
@@ -180,5 +293,5 @@ Validated Components:
 
 **Hari Sharma**
 
-Cloud Security | AWS | Azure | IAM | Security Automation
+Cloud Security Engineer | AWS | Azure | IAM | Security Automation | Infrastructure as Code
 
