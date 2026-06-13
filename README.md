@@ -145,6 +145,35 @@ Validated Components:
 * Azure incident response implementation
 * Multi-cloud orchestration
 
+## Project Screenshots
+
+### GuardDuty Deployment
+
+![GuardDuty Deployment](screenshots/01-guardduty-deployment.png)
+
+### CloudTrail Configuration
+
+![CloudTrail Configuration](screenshots/02-aws-cloudtrail-enabled.png)
+
+### Lambda Deployment
+
+![Lambda Deployment](screenshots/03-aws-lambda-deployed.png)
+
+### EventBridge Integration
+
+![EventBridge Integration](screenshots/04-eventbridge-lambda-trigger.png)
+
+### Resource Cleanup
+
+![Resource Cleanup](screenshots/05-resource-cleanup.png)
+
+
+
+
+
+
+
+
 ---
 
 ## Author
