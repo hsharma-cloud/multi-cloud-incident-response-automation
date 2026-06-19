@@ -243,20 +243,6 @@ The infrastructure is deployed using Terraform and includes networking, monitori
 ## Architecture
 ## Current Status
 
-Infrastructure Foundation Deployed
-
-The Azure implementation establishes the monitoring, telemetry, networking, and storage foundation for future cloud-native incident response automation using Terraform and Azure-native services.
-
-## Deployment Screenshots
-
-![Log Analytics Workspace](screenshots/01-log-analytics-workspace.png)
-
-[Application Insights](screenshots/02-application-insights-deployment.png)
-
-![Storage Account](screenshots/03-storage-account-deployment.png)
-
-![Resource Group Overview](screenshots/04-resource-group-overview.png)
-
 
 ## Deployed Services
 
@@ -295,7 +281,6 @@ Resource Group
       └── Storage Account
 ```
 
-<<<<<<< HEAD
 ---
 
 ## Deployed Resources
@@ -356,7 +341,6 @@ azurerm_storage_account
 * azurerm_storage_account
 
 ## Planned Enhancements
->>>>>>> 52f12d0 (Fix Azure screenshot paths)
 
 * Azure Function App
 * Automated NSG Isolation
@@ -375,8 +359,6 @@ Current Status: Active Development
 Infrastructure foundation and monitoring services successfully deployed and validated using Terraform.
 
 Future updates will include architecture diagrams, deployment screenshots, Terraform code, and validation testing.
-=======
->>>>>>> 52f12d0 (Fix Azure screenshot paths)
 
 ---
 
