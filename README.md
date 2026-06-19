@@ -211,26 +211,8 @@ This implementation demonstrates:
 
 # Azure Incident Response Automation
 
-# Azure Incident Response Infrastructure
-
 Azure security monitoring and incident response foundation implemented using Terraform and Azure-native services.
 
----
-
-## Deployment Screenshots
-
-
-![Log Analytics Workspace](azure/screenshots/01-log-analytics-workspace.png)
-
-![Application Insights](azure/screenshots/02-application-insights-deployment.png)
-
-![Storage Account](azure/screenshots/03-storage-account-deployment.png)
-
-![Resource Group Overview](azure/screenshots/04-resource-group-overview.png)
-
-
-
----
 
 ## Solution Overview
 
@@ -328,85 +310,20 @@ azurerm_storage_account
 
 ---
 
-## Future Enhancements
-=======
-## Terraform Resources
 
-* azurerm_resource_group
-* azurerm_virtual_network
-* azurerm_subnet
-* azurerm_network_security_group
-* azurerm_log_analytics_workspace
-* azurerm_application_insights
-* azurerm_storage_account
+## Deployment Screenshots
 
-## Planned Enhancements
 
-* Azure Function App
-* Automated NSG Isolation
-* Microsoft Defender for Cloud Integration
-* Microsoft Sentinel Integration
-* Security Alert Automation
-* Incident Response Playbooks
-<<<<<<< HEAD
+![Log Analytics Workspace](azure/screenshots/01-log-analytics-workspace.png)
 
----
+![Application Insights](azure/screenshots/02-application-insights-deployment.png)
 
-## Status
+![Storage Account](azure/screenshots/03-storage-account-deployment.png)
 
-Current Status: Active Development
+![Resource Group Overview](azure/screenshots/04-resource-group-overview.png)
 
-Infrastructure foundation and monitoring services successfully deployed and validated using Terraform.
 
-Future updates will include architecture diagrams, deployment screenshots, Terraform code, and validation testing.
 
----
-
-# Future Enhancements
-
-## AWS
-
-* AWS Security Hub Integration
-* SNS Notifications
-* Slack Integration
-* Advanced Event Filtering
-
-## Azure
-
-* Microsoft Sentinel Playbooks
-* Logic Apps Automation
-* Automated VM Isolation
-* Defender for Cloud Integration
-
-## Multi-Cloud
-
-* Unified Security Dashboard
-* Cross-Cloud Incident Correlation
-* Centralized Alerting
-* Automated Multi-Cloud Remediation
-
----
-
-## Repository Structure
-
-```text
-multi-cloud-incident-response-automation/
-│
-├── aws/
-│   ├── main.tf
-│   ├── lambda/
-│   └── supporting resources
-│
-├── azure/
-│
-├── screenshots/
-│
-├── providers.tf
-├── README.md
-└── .gitignore
-```
-
----
 
 
 **Hari Sharma**
