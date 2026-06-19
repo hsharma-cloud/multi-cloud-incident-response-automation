@@ -219,21 +219,16 @@ Azure security monitoring and incident response foundation implemented using Ter
 
 ## Deployment Screenshots
 
-### Log Analytics Workspace
 
-![Log Analytics Workspace](screenshots/01-log-analytics-workspace.png)
+![Log Analytics Workspace](azure/screenshots/01-log-analytics-workspace.png)
 
-### Application Insights
+![Application Insights](azure/screenshots/02-application-insights-deployment.png)
 
-![Application Insights](screenshots/02-application-insights-deployment.png)
+![Storage Account](azure/screenshots/03-storage-account-deployment.png)
 
-### Storage Account
+![Resource Group Overview](azure/screenshots/04-resource-group-overview.png)
 
-![Storage Account](screenshots/03-storage-account-deployment.png)
 
-### Resource Group Overview
-
-![Resource Group Overview](screenshots/04-resource-group-overview.png)
 
 ---
 
@@ -246,6 +241,42 @@ The infrastructure is deployed using Terraform and includes networking, monitori
 ---
 
 ## Architecture
+## Current Status
+
+Infrastructure Foundation Deployed
+
+The Azure implementation establishes the monitoring, telemetry, networking, and storage foundation for future cloud-native incident response automation using Terraform and Azure-native services.
+
+## Deployment Screenshots
+
+![Log Analytics Workspace](screenshots/01-log-analytics-workspace.png)
+
+[Application Insights](screenshots/02-application-insights-deployment.png)
+
+![Storage Account](screenshots/03-storage-account-deployment.png)
+
+![Resource Group Overview](screenshots/04-resource-group-overview.png)
+
+
+## Deployed Services
+
+### Networking
+
+* Azure Resource Group
+* Virtual Network
+* Subnet
+* Network Security Group
+
+### Monitoring & Observability
+
+* Log Analytics Workspace
+* Application Insights
+
+### Storage
+
+* Azure Storage Account
+
+## Current Architecture
 
 ```text
 Azure Monitor
@@ -264,6 +295,7 @@ Resource Group
       └── Storage Account
 ```
 
+<<<<<<< HEAD
 ---
 
 ## Deployed Resources
@@ -312,6 +344,19 @@ azurerm_storage_account
 ---
 
 ## Future Enhancements
+=======
+## Terraform Resources
+
+* azurerm_resource_group
+* azurerm_virtual_network
+* azurerm_subnet
+* azurerm_network_security_group
+* azurerm_log_analytics_workspace
+* azurerm_application_insights
+* azurerm_storage_account
+
+## Planned Enhancements
+>>>>>>> 52f12d0 (Fix Azure screenshot paths)
 
 * Azure Function App
 * Automated NSG Isolation
@@ -319,6 +364,7 @@ azurerm_storage_account
 * Microsoft Sentinel Integration
 * Security Alert Automation
 * Incident Response Playbooks
+<<<<<<< HEAD
 
 ---
 
@@ -329,6 +375,8 @@ Current Status: Active Development
 Infrastructure foundation and monitoring services successfully deployed and validated using Terraform.
 
 Future updates will include architecture diagrams, deployment screenshots, Terraform code, and validation testing.
+=======
+>>>>>>> 52f12d0 (Fix Azure screenshot paths)
 
 ---
 
