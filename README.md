@@ -241,8 +241,7 @@ The infrastructure is deployed using Terraform and includes networking, monitori
 * Azure Storage Account
 
 ## Current Architecture
-
-
+```text
 Azure Monitor
       │
       ▼
@@ -257,7 +256,7 @@ Resource Group
       ├── Subnet
       ├── Network Security Group
       └── Storage Account
-
+```
 ---
 
 ## Deployed Resources
@@ -292,8 +291,7 @@ Resource Group
 ---
 
 ## Terraform Resources
-
-
+```text
 azurerm_resource_group
 azurerm_virtual_network
 azurerm_subnet
@@ -301,7 +299,7 @@ azurerm_network_security_group
 azurerm_log_analytics_workspace
 azurerm_application_insights
 azurerm_storage_account
-
+```
 ---
 
 ## Deployment Screenshots
