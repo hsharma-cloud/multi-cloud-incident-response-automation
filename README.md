@@ -211,33 +211,122 @@ This implementation demonstrates:
 
 # Azure Incident Response Automation
 
-**Status: Planned**
+# Azure Incident Response Infrastructure
 
-The Azure implementation will extend the same incident response concepts using Azure-native security services.
+Azure security monitoring and incident response foundation implemented using Terraform and Azure-native services.
 
-### Planned Services
+---
 
-* Microsoft Defender for Cloud
-* Microsoft Sentinel
-* Azure Functions
-* Azure Monitor
-* Log Analytics Workspace
-* Azure Event Grid
-* Azure Storage Account
+## Deployment Screenshots
 
-### Planned Workflow
+### Log Analytics Workspace
+
+![Log Analytics Workspace](screenshots/01-log-analytics-workspace.png)
+
+### Application Insights
+
+![Application Insights](screenshots/02-application-insights-deployment.png)
+
+### Storage Account
+
+![Storage Account](screenshots/03-storage-account-deployment.png)
+
+### Resource Group Overview
+
+![Resource Group Overview](screenshots/04-resource-group-overview.png)
+
+---
+
+## Solution Overview
+
+This project establishes the Azure foundation for cloud-native security monitoring, observability, and incident response automation.
+
+The infrastructure is deployed using Terraform and includes networking, monitoring, telemetry, and storage services that support future incident response workflows.
+
+---
+
+## Architecture
 
 ```text
-Microsoft Defender for Cloud
-            ↓
-      Azure Monitor
-            ↓
-      Event Grid
-            ↓
-     Azure Function
-            ↓
- Automated Containment
+Azure Monitor
+      │
+      ▼
+Application Insights
+      │
+      ▼
+Log Analytics Workspace
+
+Resource Group
+      │
+      ├── Virtual Network
+      ├── Subnet
+      ├── Network Security Group
+      └── Storage Account
 ```
+
+---
+
+## Deployed Resources
+
+### Networking
+
+* Resource Group
+* Virtual Network
+* Subnet
+* Network Security Group (NSG)
+
+### Monitoring & Visibility
+
+* Log Analytics Workspace
+* Application Insights
+
+### Storage
+
+* Azure Storage Account
+
+---
+
+## Security Capabilities
+
+* Centralized log collection
+* Application monitoring and telemetry
+* Network segmentation
+* Security monitoring foundation
+* Infrastructure as Code (Terraform)
+* Azure-native security architecture
+
+---
+
+## Terraform Resources
+
+```text
+azurerm_resource_group
+azurerm_virtual_network
+azurerm_subnet
+azurerm_network_security_group
+azurerm_log_analytics_workspace
+azurerm_application_insights
+azurerm_storage_account
+```
+
+---
+
+## Future Enhancements
+
+* Azure Function App
+* Automated NSG Isolation
+* Microsoft Defender for Cloud Integration
+* Microsoft Sentinel Integration
+* Security Alert Automation
+* Incident Response Playbooks
+
+---
+
+## Status
+
+Current Status: Active Development
+
+Infrastructure foundation and monitoring services successfully deployed and validated using Terraform.
 
 Future updates will include architecture diagrams, deployment screenshots, Terraform code, and validation testing.
 
@@ -289,7 +378,6 @@ multi-cloud-incident-response-automation/
 
 ---
 
-## Author
 
 **Hari Sharma**
 
